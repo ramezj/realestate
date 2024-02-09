@@ -19,10 +19,6 @@
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-<<<<<<< HEAD
-    "react-router-dom": "^6.22.0",
-=======
->>>>>>> 8e4e168ae9e3044c5d6b172f814504a16ade0f6b
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   },

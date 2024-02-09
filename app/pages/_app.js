@@ -7,11 +7,11 @@ export default function App({ Component, pageProps: { session, ...pageProps}}) {
   return (
     <>
     <html lang="en" suppressHydrationWarning>
-      <ThemeProvider attribute="class" defaultTheme="dark">
+      {/* <ThemeProvider attribute="class" defaultTheme="dark"> */}
         <SessionProvider session={session}>
             <Component {...pageProps} />
         </SessionProvider>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </html>
     </>
   )
