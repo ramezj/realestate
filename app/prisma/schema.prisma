@@ -45,6 +45,12 @@ model User {
   sessions      Session[]
 }
 
+model Property {
+    id            String    @id @default(cuid())
+    type          String
+    Price         Int
+}
+
 model VerificationToken {
   identifier String
   token      String   @unique
