@@ -25,7 +25,7 @@ export default function Home() {
             <SearchBar value={searchQuery} onChange={((e) => { setSearchQuery(e.target.value)})} />
             <br />
             <Button type='submit' className='w-[22rem]'>
-              Search
+              Find your new home
             </Button>
           </form>
         </div>
