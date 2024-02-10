@@ -1,7 +1,18 @@
 import Layout from "@/components/Layout";
 import { SearchBar } from "@/components/SearchBar";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const [ searchQuery, setSearchQuery ] = useState("");
+  const onSearch = (e) => {
+    e.preventDefault();
+    const encodedSearchQuery = encodeURI(searchQuery);
+    router.push(`/search?q=${encodedSearchQuery}`)
+    console.log('query :', encodedSearchQuery);
+  }
   return (
     <>
     <Layout>
@@ -10,7 +21,13 @@ export default function Home() {
             Ideal Real Estate Matches for Everybody, Everywhere.
           </h1>
         <div className="2xl:w-1/3 lg:w-1/2 md:w-1/2 w-3/4 mt-16">
-          <SearchBar />
+          <form onSubmit={onSearch}>
+            <SearchBar value={searchQuery} onChange={((e) => { setSearchQuery(e.target.value)})} />
+            <br />
+            <Button type='submit' className='w-[22rem]'>
+              Search
+            </Button>
+          </form>
         </div>
       </center>
     </Layout>
