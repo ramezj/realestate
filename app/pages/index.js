@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
+import { Card ,CardHeader,CardFooter,CardContent,CardDescription,CardTitle,CardImage} from "@/components/ui/card";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -32,6 +33,42 @@ export default function Home() {
           </form>
         </div>
       </center>
+      <div className="container mx-auto my-8 w-4/5">
+      <div className="flex space-x-4">
+      <Card>
+  <CardHeader>
+    <CardTitle>Real Estate Ad</CardTitle>
+  </CardHeader>
+  <CardImage src="https://bayut-eg-production.s3.amazonaws.com/thumbnails/14335834-800x600.webp" alt="Real Estate Ad" />
+  <CardContent>
+    <CardDescription>
+      Explore this beautiful property with stunning views. Spacious rooms, modern amenities, and more!
+    </CardDescription>
+  </CardContent>
+  <CardFooter>
+    {<Button type='' className='w-[22rem]'>
+      Learn more
+    </Button>}
+  </CardFooter>
+</Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Real Estate Ad</CardTitle>
+  </CardHeader>
+  <CardImage src="https://bayut-eg-production.s3.amazonaws.com/thumbnails/14335834-800x600.webp" alt="Real Estate Ad" />
+  <CardContent>
+    <CardDescription>
+      Explore this beautiful property with stunning views. Spacious rooms, modern amenities, and more!
+    </CardDescription>
+  </CardContent>
+  <CardFooter>
+    {<Button type='' className='w-[22rem]'>
+      Learn more
+    </Button>}
+  </CardFooter>
+</Card>
+</div>
+</div>
     </Layout>
     </>
   );
