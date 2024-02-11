@@ -54,7 +54,7 @@ export default function Home() {
     </CardDescription>
   </CardContent>
   <CardFooter>
-    <Button type='' className='w-[22rem]'>
+    <Button type='' className='w-[18rem]'>
       Learn more
     </Button>
   </CardFooter>
@@ -70,7 +70,7 @@ export default function Home() {
     </CardDescription>
   </CardContent>
   <CardFooter>
-    <Button type='' className='w-[22rem]'>
+    <Button type='' className='w-[18rem]'>
       Learn more
     </Button>
   </CardFooter>
