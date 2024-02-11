@@ -1,12 +1,11 @@
-import Navbar from "./Navbar"
+import { Navbar } from "./Navbar"
 
-function Layout(props) {
+export default function Layout(props) {
   return (
     <div className='min-h-screen bg-white dark:bg-black font-sans antialiased'>
-      <Navbar/>
+      <Navbar session={props.session}/>
       {props.children}
     </div>
   )
 }
 
-export default Layout

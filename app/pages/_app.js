@@ -6,7 +6,7 @@ import NoSSR from "@/utils/NoSSR";
 export default function App({ Component, pageProps: { session, ...pageProps}}) {
   return (
     <>
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>

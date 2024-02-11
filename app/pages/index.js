@@ -3,9 +3,11 @@ import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
   const router = useRouter();
+  const { data: session, status } = useSession()
   const [ searchQuery, setSearchQuery ] = useState("");
   const onSearch = (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ export default function Home() {
   }
   return (
     <>
-    <Layout>
+    <Layout session={session}>
       <center>
           <h1 className="font-bold text-4xl mt-16">
             Ideal Real Estate Matches for Everybody, Everywhere.
