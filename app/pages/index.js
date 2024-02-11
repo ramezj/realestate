@@ -1,10 +1,19 @@
 import Layout from "@/components/Layout";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
-import { Card ,CardHeader,CardFooter,CardContent,CardDescription,CardTitle,CardImage} from "@/components/ui/card";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardImage
+} from "@/components/ui/card"
+
 
 export default function Home() {
   const router = useRouter();
@@ -27,14 +36,13 @@ export default function Home() {
           <form onSubmit={onSearch}>
             <SearchBar value={searchQuery} onChange={((e) => { setSearchQuery(e.target.value)})} />
             <br />
-            <Button type='submit' className='w-[22rem]'>
+            <Button type='submit' className='w-[20rem]'>
               Find your new home
             </Button>
           </form>
         </div>
       </center>
-      <div className="container mx-auto my-8 w-4/5">
-      <div className="flex space-x-4">
+      <div className="flex flex-wrap gap-8 justify-center w-full mt-6">
       <Card>
   <CardHeader>
     <CardTitle>Real Estate Ad</CardTitle>
@@ -46,9 +54,9 @@ export default function Home() {
     </CardDescription>
   </CardContent>
   <CardFooter>
-    {<Button type='' className='w-[22rem]'>
+    <Button type='' className='w-[22rem]'>
       Learn more
-    </Button>}
+    </Button>
   </CardFooter>
 </Card>
 <Card>
@@ -62,12 +70,11 @@ export default function Home() {
     </CardDescription>
   </CardContent>
   <CardFooter>
-    {<Button type='' className='w-[22rem]'>
+    <Button type='' className='w-[22rem]'>
       Learn more
-    </Button>}
+    </Button>
   </CardFooter>
 </Card>
-</div>
 </div>
     </Layout>
     </>
