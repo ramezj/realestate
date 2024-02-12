@@ -17,12 +17,13 @@ export default async function handler(req, res) {
             message:'fields missing'
         })
     }
-    if(typeof type != string || typeof price != Number || typeof location != string) {
-        return res.status(400).json({
-            ok:false,
-            message:'typeof incorrect'
-        })
-    }
+    // debug later
+    // if(typeof type != String || typeof price != Number || typeof location != String) {
+    //     return res.status(400).json({
+    //         ok:false,
+    //         message:'typeof incorrect'
+    //     })
+    // }
     // creating new property in db.
     try {
         const property = await prisma.property.create({
@@ -38,6 +39,7 @@ export default async function handler(req, res) {
             message:'Property created successfully'
         })
     } catch (error) {
+        console.error(error);
         return res.status(400).json({
             ok:false,
             message:error

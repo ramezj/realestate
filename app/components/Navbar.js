@@ -15,7 +15,11 @@ export const Navbar = (props) => {
             props.session
             ? 
             <>
-             <Button className="text-white hover:text-gray-300">{props.session.user.name}</Button>
+             <Button asChild className="text-white hover:text-gray-300">
+                <Link href='/property/create'>
+                  {props.session.user.name}
+                </Link>
+             </Button>
             </>
             : 
             <>
