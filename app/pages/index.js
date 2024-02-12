@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
@@ -25,6 +25,20 @@ export default function Home() {
     router.push(`/search?q=${encodedSearchQuery}`)
     console.log('query :', encodedSearchQuery);
   }
+  // debugging back-end service
+  const debugBackend = async () => {
+    const response = await fetch('/api/property/create', {
+      method:'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        data:'hello!'
+      })
+    });
+    const res = await response.json();
+    console.log(res);
+  }
   return (
     <>
     <Layout session={session}>
@@ -43,6 +57,9 @@ export default function Home() {
         </div>
       </center>
       <div className="flex flex-wrap gap-8 justify-center w-full mt-6">
+      <Button onClick={debugBackend}>
+              Debug
+            </Button>
       <Card>
   <CardHeader>
     <CardTitle>Real Estate Ad</CardTitle>
