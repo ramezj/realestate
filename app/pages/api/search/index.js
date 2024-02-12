@@ -17,5 +17,14 @@ export default async function handler(req, res) {
             }
         }
     });
-    console.log(properties);
+    if(!properties) {
+        return res.status(400).json({
+            ok:false,
+            message:'no properties found'
+        })
+    };
+    res.status(200).json({
+        ok:true,
+        properties:properties
+    })
 }
