@@ -23,7 +23,7 @@ export default function CreatePage() {
             },
             body: JSON.stringify({
                 type:type,
-                price:price,
+                price:parseInt(price),
                 location:location
             })
         })
