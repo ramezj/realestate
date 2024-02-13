@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
+import { PropertyCard } from "@/components/PropertyCard";
 
 export default function SearchPage() {
     const [ loading, setLoading ] = useState(true);
@@ -30,6 +31,7 @@ export default function SearchPage() {
             {JSON.stringify(response)}
             </>
         }
+        <PropertyCard title='test hello world' />
         </>
     )
 }

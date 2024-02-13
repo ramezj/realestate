@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import { Button } from './ui/button';
 import { signIn } from 'next-auth/react';
+import { ModeToggle } from './ModeToggle';
 
 export const Navbar = (props) => {
   return (
@@ -11,6 +12,7 @@ export const Navbar = (props) => {
           <Link href="/" className="hover:text-gray-300">RealEstate</Link>
         </div>
         <div className="flex space-x-4">
+          <ModeToggle />
           {
             props.session
             ? 

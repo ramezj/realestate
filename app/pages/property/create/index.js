@@ -10,6 +10,7 @@ export default function CreatePage() {
     const { data: session, status } = useSession();
     const [ loading, setLoading ] = useState();
     const [ type, setType ] = useState();
+    const [ district, setDistrict ] = useState();
     const [ price, setPrice ] = useState();
     const [ location, setLocation ] = useState();
     const [ response, setResponse ] = useState();
@@ -23,6 +24,7 @@ export default function CreatePage() {
             },
             body: JSON.stringify({
                 type:type,
+                district:district,
                 price:parseInt(price),
                 location:location
             })
@@ -43,7 +45,9 @@ export default function CreatePage() {
             <br />
             <Input value={type} onChange={((e) => {setType(e.target.value)})} placeholder='Villa, apartment, townhouse etc.' />
             <br />
-            <Input value={location} onChange={((e) => {setLocation(e.target.value)})} placeholder='New Cairo, Rehab City' />
+            <Input value={district} onChange={((e) => {setDistrict(e.target.value)})} placeholder='New Cairo, Giza, 6th of october' />
+            <br />
+            <Input value={location} onChange={((e) => {setLocation(e.target.value)})} placeholder='Rehab City 2, group 122' />
             { 
             loading 
             ? 

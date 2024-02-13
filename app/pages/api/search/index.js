@@ -10,13 +10,22 @@ export default async function handler(req, res) {
         })
     }
     const query = req.query;
+    // const properties = await prisma.property.findMany({
+    //     where: {
+    //         type: {
+    //             search: query.q
+    //         }
+    //     }
+    // });
     const properties = await prisma.property.findMany({
         where: {
-            type: {
-                search: query.q
-            }
+          OR: [
+            { type: { contains: query.q, mode: 'insensitive' } },
+            { location: { contains: query.q, mode: 'insensitive' } }
+          ]
         }
-    });
+      });
+    console.log(properties);
     if(!properties) {
         return res.status(400).json({
             ok:false,

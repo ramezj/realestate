@@ -50,6 +50,7 @@ model User {
 model Property {
     id            String    @id @default(cuid())
     type          String
+    district      String
     price         Int
     location      String
     userId        String
