@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </center>
       <div className="flex flex-wrap gap-8 justify-center w-full mt-6">
-  <Card>
+  <Card className=''>
     <CardHeader>
       <CardTitle>Real Estate Ad</CardTitle>
     </CardHeader>

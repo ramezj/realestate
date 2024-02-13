@@ -10,8 +10,8 @@ export default async function handler(req, res) {
             message:'not authenticated'
         })
     };
-    const { type, price, location } = req.body;
-    if( !type || !price || !location ) {
+    const { type, price, location, district } = req.body;
+    if( !type || !price || !location || !district ) {
         return res.status(400).json({
             ok:false,
             message:'fields missing'
@@ -29,6 +29,7 @@ export default async function handler(req, res) {
         const property = await prisma.property.create({
             data: {
                 type:type,
+                district:district,
                 price:price,
                 location:location,
                 userId: session.user.id
