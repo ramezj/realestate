@@ -57,7 +57,7 @@ CardContent.displayName = "CardContent";
 const CardFooter = React.forwardRef(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center justify-between p-6 pt-0", className)}
+    className={cn("flex items-center justify-end p-4 sm:p-2", className)}
     {...props}
   >
     {children}

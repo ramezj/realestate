@@ -39,21 +39,21 @@ export default function Home() {
     <>
     <Layout session={session}>
       <center>
-          <h1 className="font-bold text-4xl mt-16">
+          <h1 className="font-bold text-4xl mt-8 md:mt-16">
             Ideal Real Estate Matches for Everybody, Everywhere.
           </h1>
-        <div className="2xl:w-1/3 lg:w-1/2 md:w-1/2 w-3/4 mt-16">
+        <div className="md:w-3/4 mt-8">
           <form onSubmit={onSearch}>
             <SearchBar value={searchQuery} onChange={((e) => { setSearchQuery(e.target.value)})} />
             <br />
-            <Button type='submit' className='w-[20rem]'>
+            <Button type='submit' className='w-[15rem]'>
               Find your new home
             </Button>
           </form>
         </div>
       </center>
-      <div className="flex flex-wrap gap-8 justify-center w-full mt-6">
-  <Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+      <Card className="rounded-lg p-4 md:p-2 shadow-md md:shadow-none">
     <CardHeader>
       <CardTitle>Real Estate Ad</CardTitle>
     </CardHeader>
@@ -80,9 +80,9 @@ export default function Home() {
         <Button
           type=''
           className={`w-[50%] text-right bg-gray-800 text-white border border-gray-500`}
-          onClick={() => handleLikeClick(1)}
+          onClick={() => handleLikeClick(2)}
         >
-          <HeartIcon className={`h-6 w-6 ${likedButtons[1] ? 'text-red-500' : ''}`} />
+          <HeartIcon className={`h-6 w-6 ${likedButtons[2] ? 'text-red-500' : ''}`} />
         </Button>
         <Button type='' className='w-[50%] text-right bg-gray-800 text-white border border-gray-500'>
           <DotsVerticalIcon className="h-6 w-6" />
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
     </CardFooter>
   </Card>
-  <Card>
+  <Card className="rounded-lg p-4 md:p-2 shadow-md md:shadow-none">
     <CardHeader>
       <CardTitle>Real Estate Ad</CardTitle>
     </CardHeader>
