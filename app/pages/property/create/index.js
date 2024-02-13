@@ -24,6 +24,7 @@ export default function CreatePage() {
             },
             body: JSON.stringify({
                 type:type,
+                district:district,
                 price:parseInt(price),
                 location:location
             })
