@@ -30,11 +30,11 @@ export function PropertyCard(props) {
             <Tooltip>
             <TooltipTrigger asChild>
                 <Button>
-                    <Mail className="h-4 w-4" />
+                    <Phone className="h-4 w-4" />
                 </Button>
             </TooltipTrigger>
             <TooltipContent>
-                <p>Email</p>
+                <p>Call Owner</p>
             </TooltipContent>
             </Tooltip>
             </TooltipProvider>
@@ -42,11 +42,11 @@ export function PropertyCard(props) {
             <Tooltip>
             <TooltipTrigger asChild>
             <Button>
-                <Phone className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
             </Button>
             </TooltipTrigger>
             <TooltipContent>
-                <p>Call</p>
+                <p>Send Email</p>
             </TooltipContent>
             </Tooltip>
             </TooltipProvider>
