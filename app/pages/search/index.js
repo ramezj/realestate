@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { PropertyCard } from "@/components/PropertyCard";
+import Layout from "@/components/Layout";
 
 export default function SearchPage() {
     const [ loading, setLoading ] = useState(true);
@@ -19,19 +20,13 @@ export default function SearchPage() {
         fetchSearch();
     }, [])
     return (
-        <>
-        {
-            loading
-            ? 
-            <>
-            loading data
-            </>
-            : 
-            <>
-            {JSON.stringify(response)}
-            </>
-        }
+        <Layout>
+        <div className="flex flex-wrap gap-8 justify-center w-full">
         <PropertyCard title='test hello world' />
-        </>
+        <PropertyCard title='test hello world' />
+        <PropertyCard title='test hello world' />
+        <PropertyCard title='test hello world' />
+        </div>
+        </Layout>
     )
 }
