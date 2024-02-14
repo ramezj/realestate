@@ -14,7 +14,7 @@ import {
     TooltipTrigger,
   } from "@/components/ui/tooltip"
 import { Button } from "./ui/button"
-import { Mail, Phone, Send  } from "lucide-react"
+import { Mail, Phone, Send, MapPin } from "lucide-react"
 import Layout from "./Layout"
 
 export function PropertyCard(props) {
@@ -23,8 +23,9 @@ export function PropertyCard(props) {
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure><img src="https://bayut-eg-production.s3.amazonaws.com/thumbnails/14335834-800x600.webp" alt="Shoes" /></figure>
         <div className="card-body">
-            <h2 className="card-title">Apartment</h2>
-            <p>Rehab 2, group 122, building 8</p>
+            <h2 className="card-title">{props.price} EGP</h2>
+            <p>Apartment for sale in Sheikh Zayed, 160m</p>
+            <p className="flex"><MapPin className="mr-2 flex"/>{props.location}</p>
             <div className="card-actions justify-start mt-1">
             <TooltipProvider delayDuration={175}>
             <Tooltip>
