@@ -7,6 +7,12 @@ import {
     CardTitle,
     CardImage
   } from "@/components/ui/card"
+  import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "@/components/ui/tooltip"
 import { Button } from "./ui/button"
 import { Mail, Phone, Send  } from "lucide-react"
 import Layout from "./Layout"
@@ -20,12 +26,30 @@ export function PropertyCard(props) {
             <h2 className="card-title">Apartment</h2>
             <p>Rehab 2, group 122, building 8</p>
             <div className="card-actions justify-start mt-1">
-            <Button>
-                <Mail className="h-4 w-4" />
-            </Button>
+            <TooltipProvider delayDuration={175}>
+            <Tooltip>
+            <TooltipTrigger asChild>
+                <Button>
+                    <Mail className="h-4 w-4" />
+                </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p>Email</p>
+            </TooltipContent>
+            </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider delayDuration={175}>
+            <Tooltip>
+            <TooltipTrigger asChild>
             <Button>
                 <Phone className="h-4 w-4" />
             </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p>Call</p>
+            </TooltipContent>
+            </Tooltip>
+            </TooltipProvider>
             <Button>
                 <Send className="mr-2 h-4 w-4" />
                 Whatsapp
